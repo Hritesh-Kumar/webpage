@@ -11,7 +11,7 @@
     <script src="scripts.js" defer></script>
 </head>
 <body>   
- <div class="container">
+<div class="container">
     <nav class="nav">
         <div class="nav-logo">
             <p>SONU .</p>
@@ -83,24 +83,38 @@
             </div>
             <div class="two-forms">
                 <div class="input-box">
-                    <input type="text" class="input-field" placeholder="Firstname">
+                    <input type="text" class="input-field" placeholder="Firstname" id="fname" oninput="clearError('nameError')" required>
                     <i class="bx bx-user"></i>
+                    <div id="nameError" class="error"></div>
                 </div>
                 <div class="input-box">
-                    <input type="text" class="input-field" placeholder="Lastname">
+                    <input type="text" class="input-field" placeholder="Lastname" id="lname" oninput="clearError('nameError')" required>
                     <i class="bx bx-user"></i>
+                    <div id="nameError" class="error"></div>
                 </div>
             </div>
             <div class="input-box">
-                <input type="text" class="input-field" placeholder="Email">
+                <input type="text" class="input-field" placeholder="Email" id="email" oninput="clearError('emailError')" required>
                 <i class="bx bx-envelope"></i>
+                <div id="emailError" class="error"></div>
             </div>
             <div class="input-box">
-                <input type="password" class="input-field" placeholder="Password">
+                <input type="password" class="input-field" placeholder="Password" id="password" oninput="clearError('passwordError')" required>
                 <i class="bx bx-lock-alt"></i>
+                <div id="passwordError" class="error"></div>
             </div>
             <div class="input-box">
-                <input type="submit" class="submit" value="Register">
+                <input type="password" class="input-field" placeholder="Confirm Password" id="confirm-password" oninput="clearError('confirmPasswordError')" required>
+                <i class="bx bx-lock-alt"></i>
+                <div id="confirmPasswordError" class="error"></div>
+            </div>
+            <div class="input-box">
+                <input type="number" class="input-field" placeholder="Ph no." id="phone" oninput="clearError('phoneError')" required>
+                <i class="bx bx-lock-alt"></i>
+                <div id="phoneError" class="error"></div>
+            </div>
+            <div class="input-box">
+                <input type="submit" class="submit" value="Register" onsubmit="return validateForm();">
             </div>
             <div class="two-col">
                 <div class="one">

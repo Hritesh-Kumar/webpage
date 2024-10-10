@@ -111,7 +111,7 @@ body {
     align-items: center;
     justify-content: center;
     width: 512px;
-    height: 420px;
+    height: 600px;
     overflow: hidden;
     z-index: 2;
 }
@@ -229,6 +229,11 @@ header {
     text-decoration: underline;
 }
 
+.error{
+    color: red;
+    font-size: 0.9rem;
+}
+
 
 /* Responsive (at least i tried [ :'( ] ) */
 
@@ -246,7 +251,7 @@ header {
         justify-content: center;
         background: rgba(255, 255, 255, 0.2);
         width: 100%;
-        height: 90vh;
+        /* height: 90vh; this was the problem here */
         backdrop-filter: blur(20px);
         transition: .3s;
     }
@@ -277,7 +282,7 @@ header {
     }
     .form-box {
         width: 100%;
-        height: 500px;
+        height: 650px;
     }
     .register-container, .login-container {
         width: 100%;
@@ -287,4 +292,37 @@ header {
         flex-direction: column;
         gap: 0;
     }
+    .input-field{
+        padding: 0 10px 0 35px
+    }
+    .register-container .top span{
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        text-align: center
+    }
+    .input-field {
+        font-size: 13px;
+        background: rgba(255, 255, 255, 0.2);
+        color: #fff;
+        height: 40px;
+        width: 100%;
+        padding: 0 10px 0 45px;
+        border: none;
+        border-radius: 30px;
+        outline: none;
+        transition: .2s ease;
+    }
+    
+    .input-box i {
+        position: relative;
+        top: -30px;
+        left: 17px;
+        color: #fff;
+    }
+    .input-box{
+        height: 55px;
+    }
+
 }

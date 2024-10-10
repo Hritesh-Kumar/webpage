@@ -62,3 +62,56 @@ function register() {
     loginContainer.style.opacity = 0;
     registerContainer.style.opacity = 1;
 }
+
+function validateForm() {
+    let isValid = true;
+
+    let fullName = document.getElementById("fullName").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let phone = document.getElementById("phone").value.trim();
+    let password = document.getElementById("password").value.trim();
+    let confirmPassword = document.getElementById("confirmPassword").value.trim();
+
+    // Name since i have divided name for looks therefor i haven't given any restriction to that below code can be used to implement that 
+    if (fullName.length < 5) {
+        setError("nameError", "Full Name must be at least 5 characters long");
+        isValid = false;
+    }
+
+    // Validate Email (must contain @)
+    if (!email.includes("@")) {
+        setError("emailError", "Please enter a valid email address");
+        isValid = false;
+    }
+
+    // Validate Phone Number (must not be 123456789 and must be 10 digits)
+    if (phone === "123456789" || phone.length !== 10 || isNaN(phone)) {
+        setError("phoneError", "Please enter a valid 10-digit phone number");
+        isValid = false;
+    }
+
+    //Password (cannot be 'password', user's name, or less than 8 characters)
+    if (password.toLowerCase() === "password" || password.length < 8 || password === fullName.toLowerCase()) {
+        setError("passwordError", "Password cannot be 'password', your name, or less than 8 characters");
+        isValid = false;
+    }
+
+    //Confirm Password (must match the password)
+    if (password !== confirmPassword) {
+        setError("confirmPasswordError", "Passwords do not match");
+        isValid = false;
+    }
+
+    // If the form is not valid, prevent submission
+    return isValid;
+}
+
+// Function to set error messages
+function setError(id, message) {
+    document.getElementById(id).textContent = message;
+}
+
+// Function to clear error messages on change
+function clearError(id) {
+    document.getElementById(id).textContent = "";
+}
