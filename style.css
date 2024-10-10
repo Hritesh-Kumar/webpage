@@ -326,4 +326,6 @@ header {
         height: 55px;
     }
 
-}
+    .error{
+        font-size: 10px;
+    }
